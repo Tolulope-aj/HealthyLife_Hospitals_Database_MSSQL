@@ -747,7 +747,74 @@ SELECT *
 FROM Admission;
 ```
 ### Queries and Analysis
+1. Patients' details
+```sql
+-- Patient and Admission Details:
+-- 1. List all patients with their details (ID, Name, Gender, Date of Birth, Postcode).
+
+SELECT PatientID, 
+	CONCAT(Forename,' ', Surname) AS Name,
+	Gender,
+	DateOfBirth,
+	Postcode
+FROM Patient;
+```
+![image](https://github.com/user-attachments/assets/9cc8c6ef-ecc1-488b-b443-c4d89213649c)
+
+This SQL query retrieves the patient IDs, names, gender, date of birth and postcode of all patients. The result includes patient IDs ranging from 101 to 130 and their corresponding names.
 
 
+2. Patients' total number of admissions
+```sql
+-- 2. Retrieve the total number of admissions per patient.
+
+SELECT P.PatientID, COUNT(A.AdmissionID) AS TotalNumberOfAdmissions
+FROM Patient P
+LEFT JOIN Admission A ON P.PatientID = A.PatientID
+GROUP BY P.PatientID
+ORDER BY TotalNumberOfAdmissions DESC;
+```
+![image](https://github.com/user-attachments/assets/e9b5aac5-2238-4f03-86fa-b862a2fd3290)
+
+This SQL query retrieves all patient IDs and their total number of admissions, e.g., patientID 141 with 2 admissions.
 
 
+3. Admission analysis
+```sql
+-- Admission Analysis:
+-- 3. For hospital admissions with a discharge date in the financial year 2014/15 (01/04/2014 to 31/03/2015), 
+-- find the maximum length of stay where the admission ward was the Endoscopy Suite,
+-- and the method of admission type was Elective.
+SELECT A.DischargeDate, 
+       W.WardName, 
+       M.MethodOfAdmissionType, 
+       MAX(A.LengthOfStay) AS MaximumLengthOfStay
+FROM Admission A
+JOIN Ward W ON A.WardCode = W.WardCode
+JOIN MethodOfAdmission M ON A.MethodOfAdmissionCode = M.MethodOfAdmissionCode
+WHERE W.WardName = 'Endoscopy Suite' 
+  AND M.MethodOfAdmissionType = 'Elective'
+  AND A.DischargeDate BETWEEN '2014-04-01' AND '2015-03-31'
+GROUP BY A.DischargeDate, W.WardName, M.MethodOfAdmissionType;
+```
+![image](https://github.com/user-attachments/assets/fff2e2e6-9042-4a7e-81d8-3df02e8b0b57)
+
+This SQL query result shows the maximum length of stay to be 5 days.
+
+4. Total number of admissions for each ward in the financial year 2015/16
+```sql
+-- 4. Retrieve the total number of admissions for each ward in the financial year 2015/16.
+
+SELECT W.WardCode,
+		W.WardName, 
+		W.WardType, 
+		COUNT(A.AdmissionID) AS TotalNumberOfAdmissions
+FROM Ward W
+LEFT JOIN Admission A ON W.WardCode = A.WardCode
+WHERE AdmissionDate BETWEEN '2015-04-01' AND '2016-03-31'
+GROUP BY W.WardCode, W.WardName, W.WardType
+ORDER BY TotalNumberOfAdmissions DESC;
+```
+![image](https://github.com/user-attachments/assets/97db5fe1-f248-48c9-a968-f10dda156643)
+
+This SQL query retrieves all the wards that had admissions in the year 2015/16 and their respective number of admissions.
