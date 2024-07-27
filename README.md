@@ -818,3 +818,29 @@ ORDER BY TotalNumberOfAdmissions DESC;
 ![image](https://github.com/user-attachments/assets/e5b81c79-9cbb-46d4-9f1a-c5d0e62c8528)
 
 This SQL query retrieves all the wards that had admissions in the year 2015/16 and their respective number of admissions.
+
+5. Most common diagnosis
+```sql
+-- Diagnosis and Treatment:
+--5. What was the most common primary diagnosis (include the code and description)for hospital 
+--admission episodes where the discharge date was in the financial year 2015/16 (01/04/2015 to 31/03/2016),
+--the method of admission type was Emergency, and the patient lived in the SK2 postcode area?
+
+SELECT TOP 1 D.DiagnosisCode, 
+		D.DiagnosisDescription,
+		COUNT(D.DiagnosisCode) AS Occurence
+FROM Admission A
+JOIN Diagnosis D ON A.DiagnosisCode = D.DiagnosisCode
+JOIN MethodOfAdmission M ON A.MethodOfAdmissionCode = M.MethodOfAdmissionCode
+JOIN Patient P ON A.PatientID = P.PatientID 
+WHERE A.DischargeDate BETWEEN '2015-04-01' AND '2016-03-31'
+		AND M.MethodOfAdmissionType ='Emergency'
+		AND P.Postcode = 'SK2'
+GROUP BY D.DiagnosisCode, D.DiagnosisDescription
+ORDER BY Occurence DESC;
+```
+![image](https://github.com/user-attachments/assets/c35351c8-dee2-48bf-a454-e63535b3c5fd)
+
+This SQL query result shows that Cholera with the Diagnosis code 'D050', is the most common diagnosis.
+
+6. 
