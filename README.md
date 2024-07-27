@@ -810,11 +810,11 @@ SELECT W.WardCode,
 		W.WardType, 
 		COUNT(A.AdmissionID) AS TotalNumberOfAdmissions
 FROM Ward W
-LEFT JOIN Admission A ON W.WardCode = A.WardCode
+JOIN Admission A ON W.WardCode = A.WardCode
 WHERE AdmissionDate BETWEEN '2015-04-01' AND '2016-03-31'
 GROUP BY W.WardCode, W.WardName, W.WardType
 ORDER BY TotalNumberOfAdmissions DESC;
 ```
-![image](https://github.com/user-attachments/assets/97db5fe1-f248-48c9-a968-f10dda156643)
+![image](https://github.com/user-attachments/assets/e5b81c79-9cbb-46d4-9f1a-c5d0e62c8528)
 
 This SQL query retrieves all the wards that had admissions in the year 2015/16 and their respective number of admissions.
