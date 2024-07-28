@@ -870,7 +870,7 @@ ORDER BY AdmissionEpisodes DESC;
 ```
 ![image](https://github.com/user-attachments/assets/774b4ebe-995c-406d-91ab-881f5b65099b)
 
-This SQL query shows that Riverside Clinic with the code 'GPP025' is responsible for the largest number of hospital admission episodes.
+This SQL query shows that Riverside Clinic with the code 'GPP025' has the largest number of hospital admission episodes.
 
 
 8. Comprehensive Episode Analysis
@@ -970,3 +970,6 @@ GROUP BY A1.PatientID, A1.AdmissionID, A1.DischargeDate, M1.MethodOfAdmissionTyp
 
 This SQL query retrieves all the records that meets the specified criteria above, e.g., The first result shows that PatientID 106 has 2 admission ids(1006 and 1007), and the difference between the first discharge date and the second admission date is 7 days.
 
+
+9. list of all patients who had more than one admission in the financial year 2015/16
+```sql
