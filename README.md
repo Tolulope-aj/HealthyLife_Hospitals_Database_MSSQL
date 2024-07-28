@@ -852,5 +852,24 @@ ORDER BY AvgLengthofStay DESC;
 ```
 ![image](https://github.com/user-attachments/assets/f0e4dfe7-10ea-4ab0-ab17-0992c640d2b2)
 
-This SQL query retrieves the primary diagnosis
-7.
+This SQL query result shows that Cholera with the code 'D050' is the primary diagnosis with over 100 admission episodes in the financial year 2015/16, based on the filters applied.
+
+
+7. GP and Practice analysis 
+```sql
+SELECT TOP 1 G.GPPracticeCode, 
+		G.PracticeName,
+		COUNT(A.AdmissionID) AS AdmissionEpisodes
+FROM Admission A
+JOIN GPPractice G ON A.GPPracticeCode = G.GPPracticeCode
+JOIN MethodOfAdmission M ON A.MethodOfAdmissionCode = M.MethodOfAdmissionCode
+WHERE AdmissionDate BETWEEN '2015-04-01' AND '2016-03-31'
+		AND MethodOfAdmissionType = 'GP'
+GROUP BY G.GPPracticeCode, G.PracticeName
+ORDER BY AdmissionEpisodes DESC;
+```
+![image](https://github.com/user-attachments/assets/774b4ebe-995c-406d-91ab-881f5b65099b)
+
+This SQL query shows that Riverside Clinic with the code 'GPP025' is responsible for the largest number of hospital admission episodes.
+
+
