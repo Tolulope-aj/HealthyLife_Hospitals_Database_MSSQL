@@ -873,3 +873,100 @@ ORDER BY AdmissionEpisodes DESC;
 This SQL query shows that Riverside Clinic with the code 'GPP025' is responsible for the largest number of hospital admission episodes.
 
 
+8. Comprehensive Episode Analysis
+```sql
+-- Generate a list of hospital admission episodes where:
+-- (a) The admission date (2nd episode) is within 7 days of a discharge date (1st episode) where the PatientID is the same, but the AdmissionID is different.
+-- (b) The admission date of the 2nd episode is after the discharge date of the 1st episode.
+-- (c) The method of admission type of the 1st episode is Elective, and the method of admission type of the 2nd episode is Emergency.
+-- (d) The specialty code of both admission episodes is the same.
+SELECT
+    A1.PatientID,
+    A1.AdmissionID AS '1st episode AdmissionID',
+    A1.DischargeDate AS '1st episode DischargeDate',
+	M1.MethodOfAdmissionType AS '1st episode MethodOfAdmissionType',
+    A1.SpecialtyCode AS '1st episode SpecialtyCode',
+	A2.PatientID,
+    A2.AdmissionID AS '2nd episode AdmissionID',
+    A2.AdmissionDate AS '2nd episode AdmissionDate',
+	M2.MethodOfAdmissionType AS '2nd episode MethodOfAdmissionType',
+    A2.SpecialtyCode AS '2nd episode SpecialtyCode',
+	DATEDIFF(DAY, A1.DischargeDate, A2.AdmissionDate) AS 'DaysBetweenDischargeAndAdmission'
+FROM Admission A1
+JOIN Admission A2 ON A1.PatientID = A2.PatientID
+JOIN MethodOfAdmission M1 ON A1.MethodOfAdmissionCode = M1.MethodOfAdmissionCode
+JOIN MethodOfAdmission M2 ON A2.MethodOfAdmissionCode = M2.MethodOfAdmissionCode
+WHERE A1.AdmissionID <> A2.AdmissionID
+AND DATEDIFF(DAY, A1.DischargeDate, A2.AdmissionDate) = 7
+GROUP BY A1.PatientID, A1.AdmissionID, A1.DischargeDate, M1.MethodOfAdmissionType, A1.SpecialtyCode,
+		A2.PatientID, A2.AdmissionID, A2.AdmissionDate, M2.MethodOfAdmissionType, A2.SpecialtyCode
+UNION
+SELECT
+    A1.PatientID,
+    A1.AdmissionID AS '1st episode AdmissionID',
+    A1.DischargeDate AS '1st episode DischargeDate',
+	M1.MethodOfAdmissionType AS '1st episode MethodOfAdmissionType',
+    A1.SpecialtyCode AS '1st episode SpecialtyCode',
+	A2.PatientID,
+    A2.AdmissionID AS '2nd episode AdmissionID',
+    A2.AdmissionDate AS '2nd episode AdmissionDate',
+	M2.MethodOfAdmissionType AS '2nd episode MethodOfAdmissionType',
+    A2.SpecialtyCode AS '2nd episode SpecialtyCode',
+	DATEDIFF(DAY, A1.DischargeDate, A2.AdmissionDate) AS 'DaysBetweenDischargeAndAdmission'
+FROM Admission A1
+JOIN Admission A2 ON A1.PatientID = A2.PatientID
+JOIN MethodOfAdmission M1 ON A1.MethodOfAdmissionCode = M1.MethodOfAdmissionCode
+JOIN MethodOfAdmission M2 ON A2.MethodOfAdmissionCode = M2.MethodOfAdmissionCode
+WHERE A1.AdmissionID <> A2.AdmissionID
+AND DATEDIFF(DAY, A1.DischargeDate, A2.AdmissionDate) = 1
+GROUP BY A1.PatientID, A1.AdmissionID, A1.DischargeDate, M1.MethodOfAdmissionType, A1.SpecialtyCode,
+		A2.PatientID, A2.AdmissionID, A2.AdmissionDate, M2.MethodOfAdmissionType, A2.SpecialtyCode
+UNION
+SELECT
+    A1.PatientID,
+    A1.AdmissionID AS '1st episode AdmissionID',
+    A1.DischargeDate AS '1st episode DischargeDate',
+	M1.MethodOfAdmissionType AS '1st episode MethodOfAdmissionType',
+    A1.SpecialtyCode AS '1st episode SpecialtyCode',
+	A2.PatientID,
+    A2.AdmissionID AS '2nd episode AdmissionID',
+    A2.AdmissionDate AS '2nd episode AdmissionDate',
+	M2.MethodOfAdmissionType AS '2nd episode MethodOfAdmissionType',
+    A2.SpecialtyCode AS '2nd episode SpecialtyCode',
+	DATEDIFF(DAY, A1.DischargeDate, A2.AdmissionDate) AS 'DaysBetweenDischargeAndAdmission'
+FROM Admission A1
+JOIN Admission A2 ON A1.PatientID = A2.PatientID
+JOIN MethodOfAdmission M1 ON A1.MethodOfAdmissionCode = M1.MethodOfAdmissionCode
+JOIN MethodOfAdmission M2 ON A2.MethodOfAdmissionCode = M2.MethodOfAdmissionCode
+WHERE A1.AdmissionID <> A2.AdmissionID
+AND M1.MethodOfAdmissionType = 'Elective' 
+AND M2.MethodOfAdmissionType = 'Emergency'
+GROUP BY A1.PatientID, A1.AdmissionID, A1.DischargeDate, M1.MethodOfAdmissionType, A1.SpecialtyCode,
+		A2.PatientID, A2.AdmissionID, A2.AdmissionDate, M2.MethodOfAdmissionType, A2.SpecialtyCode
+UNION
+SELECT
+    A1.PatientID,
+    A1.AdmissionID AS '1st episode AdmissionID',
+    A1.DischargeDate AS '1st episode DischargeDate',
+	M1.MethodOfAdmissionType AS '1st episode MethodOfAdmissionType',
+    A1.SpecialtyCode AS '1st episode SpecialtyCode',
+	A2.PatientID,
+    A2.AdmissionID AS '2nd episode AdmissionID',
+    A2.AdmissionDate AS '2nd episode AdmissionDate',
+	M2.MethodOfAdmissionType AS '2nd episode MethodOfAdmissionType',
+    A2.SpecialtyCode AS '2nd episode SpecialtyCode',
+	DATEDIFF(DAY, A1.DischargeDate, A2.AdmissionDate) AS 'DaysBetweenDischargeAndAdmission'
+FROM Admission A1
+JOIN Admission A2 ON A1.PatientID = A2.PatientID
+JOIN MethodOfAdmission M1 ON A1.MethodOfAdmissionCode = M1.MethodOfAdmissionCode
+JOIN MethodOfAdmission M2 ON A2.MethodOfAdmissionCode = M2.MethodOfAdmissionCode
+WHERE A1.AdmissionID <> A2.AdmissionID
+AND A1.SpecialtyCode = A2.SpecialtyCode
+GROUP BY A1.PatientID, A1.AdmissionID, A1.DischargeDate, M1.MethodOfAdmissionType, A1.SpecialtyCode,
+		A2.PatientID, A2.AdmissionID, A2.AdmissionDate, M2.MethodOfAdmissionType, A2.SpecialtyCode;
+```
+![image](https://github.com/user-attachments/assets/bae36dcc-37e5-49ea-81c7-7ede14056883)
+![image](https://github.com/user-attachments/assets/b9b19cfb-c5d3-44d2-bee4-37c6d67879eb)
+
+This SQL query retrieves all the records that meets the specified criteria above, e.g., The first result shows that PatientID 106 has 2 admission ids(1006 and 1007), and the difference between the first discharge date and the second admission date is 7 days.
+
