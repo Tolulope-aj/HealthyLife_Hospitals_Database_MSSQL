@@ -562,7 +562,7 @@ FROM Diagnosis;
 -- Insert data into Admission Table
 
 INSERT INTO Admission (PatientID, SpecialtyCode, WardCode, LengthOfStay, AdmissionDate, DischargeDate, MethodOfAdmissionCode, DiagnosisCode, GPPracticeCode) 
-VALUES (101, 'CA01', 'ICU', 4, '2015-03-15', '2015-03-19', 'EMERG', 'D050', 'GPP001'), 
+VALUES (101, 'CA01', 'ICU', 4, '2015-04-15', '2015-04-19', 'EMERG', 'D050', 'GPP001'), 
 (102, 'NE02', 'GEN', 2, '2015-05-23', '2015-05-25', 'GP', 'D002', 'GPP025'), 
 (103, 'OR03', 'ENDO', 5, '2014-06-08', '2014-06-13', 'ELECT', 'D003', 'GPP003'), 
 (104, 'DE04', 'GEN', 3, '2015-06-10', '2015-06-13', 'EMERG', 'D050', 'GPP004'), 
@@ -572,9 +572,9 @@ VALUES (101, 'CA01', 'ICU', 4, '2015-03-15', '2015-03-19', 'EMERG', 'D050', 'GPP
 (108, 'GE08', 'GEN', 6, '2015-09-20', '2015-09-26', 'EMERG', 'D050', 'GPP008'), 
 (109, 'OB09', 'MATERNITY', 2, '2015-10-01', '2015-10-03', 'MAT', 'D009', 'GPP009'), 
 (110, 'EN10', 'GEN', 3, '2015-11-07', '2015-11-10', 'GP', 'D010', 'GPP025'), 
-(111, 'GA11', 'GAS', 4, '2015-01-07', '2015-01-11', 'GP', 'D011', 'GPP025'), 
-(112, 'HE12', 'GEN', 5, '2015-02-10', '2015-02-15', 'EMERG', 'D050', 'GPP012'), 
-(113, 'IN13', 'GEN', 8, '2015-03-25', '2015-04-02', 'NON-ELECT', 'D050', 'GPP013'), 
+(111, 'GA11', 'GAS', 4, '2015-04-07', '2015-04-11', 'GP', 'D011', 'GPP025'), 
+(112, 'HE12', 'GEN', 5, '2015-04-10', '2015-04-15', 'EMERG', 'D050', 'GPP012'), 
+(113, 'IN13', 'GEN', 8, '2015-04-25', '2015-04-02', 'NON-ELECT', 'D050', 'GPP013'), 
 (114, 'NE14', 'NEURO', 6, '2015-04-10', '2015-04-16', 'GP', 'D014', 'GPP025'), 
 (115, 'PU15', 'RESP', 10, '2014-05-12', '2014-05-22', 'ELECT', 'D015', 'GPP025'), 
 (116, 'RH16', 'GEN', 3, '2015-06-05', '2015-06-08', 'GP', 'D016', 'GPP025'), 
@@ -586,18 +586,18 @@ VALUES (101, 'CA01', 'ICU', 4, '2015-03-15', '2015-03-19', 'EMERG', 'D050', 'GPP
 (122, 'IM22', 'GEN', 4, '2015-12-08', '2015-12-12', 'NON-ELECT', 'D050', 'GPP022'), 
 (213, 'FM23', 'GEN', 5, '2016-01-15', '2016-01-20', 'EMERG', 'D023', 'GPP023'), 
 (214, 'AI24', 'GEN', 7, '2016-02-23', '2016-03-01', 'GP', 'D024', 'GPP025'), 
-(215, 'PR25', 'REHAB', 15, '2016-04-01', '2016-04-16', 'NON-ELECT', 'D050', 'GPP025'),
-(216, 'EM26', 'ER', 1, '2016-05-01', '2016-05-02', 'EMERG', 'D050', 'GPP001'), 
-(217, 'OP19', 'ORTHO', 4, '2016-06-01', '2016-06-05', 'GP', 'D027', 'GPP025'), 
-(218, 'OT20', 'ORTHO', 2, '2016-07-01', '2016-07-03', 'EMERG', 'D050', 'GPP003'), 
-(219, 'AN21', 'GEN', 3, '2016-08-01', '2016-08-04', 'GP', 'D029', 'GPP025'), 
-(130, 'IM22', 'GEN', 6, '2016-09-01', '2016-09-07', 'NON-ELECT', 'D050', 'GPP005'), 
-(131, 'FM23', 'GEN', 5, '2016-10-01', '2016-10-06', 'EMERG', 'D050', 'GPP006'), 
-(132, 'AI24', 'GEN', 4, '2016-11-01', '2016-11-05', 'GP', 'D032', 'GPP025'), 
-(133, 'PR25', 'REHAB', 20, '2016-12-01', '2016-12-21', 'NON-ELECT', 'D050', 'GPP008'), 
-(134, 'GA11', 'GAS', 3, '2015-01-01', '2015-01-04', 'GP', 'D034', 'GPP025'), 
-(135, 'NE14', 'GEN', 4, '2015-02-01', '2015-02-05', 'EMERG', 'D050', 'GPP100'), 
-(136, 'PU15', 'RESP', 11, '2015-03-01', '2015-03-12', 'GP', 'D036', 'GPP025'), 
+(215, 'PR25', 'REHAB', 15, '2016-03-01', '2016-03-16', 'NON-ELECT', 'D050', 'GPP025'),
+(216, 'EM26', 'ER', 1, '2016-03-01', '2016-03-02', 'EMERG', 'D050', 'GPP001'), 
+(217, 'OP19', 'ORTHO', 4, '2016-03-01', '2016-03-05', 'GP', 'D027', 'GPP025'), 
+(218, 'OT20', 'ORTHO', 2, '2016-03-01', '2016-03-03', 'EMERG', 'D050', 'GPP003'), 
+(219, 'AN21', 'GEN', 3, '2016-03-01', '2016-03-04', 'GP', 'D029', 'GPP025'), 
+(130, 'IM22', 'GEN', 6, '2016-03-01', '2016-03-07', 'NON-ELECT', 'D050', 'GPP005'), 
+(131, 'FM23', 'GEN', 5, '2016-03-01', '2016-03-06', 'EMERG', 'D050', 'GPP006'), 
+(132, 'AI24', 'GEN', 4, '2016-03-01', '2016-03-05', 'GP', 'D032', 'GPP025'), 
+(133, 'PR25', 'REHAB', 20, '2016-01-01', '2016-01-21', 'NON-ELECT', 'D050', 'GPP008'), 
+(134, 'GA11', 'GAS', 3, '2015-04-01', '2015-04-04', 'GP', 'D034', 'GPP025'), 
+(135, 'NE14', 'GEN', 4, '2015-04-01', '2015-04-05', 'EMERG', 'D050', 'GPP100'), 
+(136, 'PU15', 'RESP', 11, '2015-04-01', '2015-04-12', 'GP', 'D036', 'GPP025'), 
 (137, 'RH16', 'GEN', 4, '2015-04-01', '2015-04-05', 'GP', 'D037', 'GPP025'), 
 (138, 'SU17', 'ORTHO', 4, '2015-05-01', '2015-05-05', 'NON-ELECT', 'D050', 'GPP013'), 
 (139, 'UR18', 'GEN', 6, '2015-06-01', '2015-06-07', 'EMERG', 'D050', 'GPP014'), 
@@ -607,9 +607,9 @@ VALUES (101, 'CA01', 'ICU', 4, '2015-03-15', '2015-03-19', 'EMERG', 'D050', 'GPP
 (143, 'IN13', 'GEN', 4, '2015-10-14', '2015-10-18', 'NON-ELECT', 'D050', 'GPP018'), 
 (144, 'NE02', 'GEN', 3, '2015-11-11', '2015-11-14', 'EMERG', 'D050', 'GPP019'), 
 (145, 'AN21', 'GEN', 2, '2015-12-08', '2015-12-10', 'GP', 'D045', 'GPP025'), 
-(146, 'IM22', 'GEN', 4, '2015-01-14', '2015-01-18', 'ELECT', 'D050', 'GPP021'), 
-(147, 'FM23', 'GEN', 5, '2015-02-20', '2015-02-25', 'EMERG', 'D050', 'GPP022'), 
-(148, 'AI24', 'GEN', 6, '2015-03-14', '2015-03-20', 'GP', 'D048', 'GPP025'), 
+(146, 'IM22', 'GEN', 4, '2015-04-14', '2015-04-18', 'ELECT', 'D050', 'GPP021'), 
+(147, 'FM23', 'GEN', 5, '2015-04-20', '2015-04-25', 'EMERG', 'D050', 'GPP022'), 
+(148, 'AI24', 'GEN', 6, '2015-04-14', '2015-04-20', 'GP', 'D048', 'GPP025'), 
 (149, 'OR03', 'ORTHO', 10, '2015-04-13', '2015-04-23', 'GP', 'D049', 'GPP024'), 
 (150, 'EN10', 'GEN', 3, '2015-05-19', '2015-05-22', 'GP', 'D050', 'GPP025'), 
 (151, 'GA11', 'GAS', 4, '2015-06-13', '2015-06-17', 'GP', 'D051', 'GPP025'), 
@@ -629,8 +629,8 @@ VALUES (101, 'CA01', 'ICU', 4, '2015-03-15', '2015-03-19', 'EMERG', 'D050', 'GPP
 (165, 'PS05', 'PSYCH', 8, '2015-10-01', '2015-10-09', 'NON-ELECT', 'D050', 'GPP005'), 
 (166, 'ON06', 'GEN', 3, '2015-11-03', '2015-11-06', 'GP', 'D066', 'GPP025'), 
 (167, 'PE07', 'PEDS', 2, '2015-12-24', '2015-12-26', 'EMERG', 'D050', 'GPP007'), 
-(168, 'GE08', 'GEN', 5, '2015-01-20', '2015-01-25', 'GP', 'D068', 'GPP025'),
-(169, 'OB09', 'MATERNITY', 1, '2015-03-07', '2015-03-08', 'MAT', 'D069', 'GPP009'), 
+(168, 'GE08', 'GEN', 5, '2015-04-20', '2015-04-25', 'GP', 'D068', 'GPP025'),
+(169, 'OB09', 'MATERNITY', 1, '2015-04-07', '2015-04-08', 'MAT', 'D069', 'GPP009'), 
 (170, 'EN10', 'GEN', 4, '2015-04-12', '2015-04-16', 'GP', 'D070', 'GPP025'), 
 (171, 'GA11', 'GAS', 3, '2015-05-20', '2015-05-23', 'EMERG', 'D050', 'GPP011'),
 (172, 'HE12', 'GEN', 2, '2015-06-18', '2015-06-20', 'GP', 'D072', 'GPP025'), 
@@ -641,15 +641,15 @@ VALUES (101, 'CA01', 'ICU', 4, '2015-03-15', '2015-03-19', 'EMERG', 'D050', 'GPP
 (177, 'SU17', 'ORTHO', 4, '2016-01-11', '2016-01-15', 'GP', 'D077', 'GPP025'), 
 (178, 'UR18', 'GEN', 5, '2016-02-12', '2016-02-17', 'NON-ELECT', 'D050', 'GPP018'), 
 (179, 'OP19', 'ORTHO', 3, '2016-03-18', '2016-03-21', 'EMERG', 'D050', 'GPP019'), 
-(180, 'OT20', 'ORTHO', 2, '2016-04-17', '2016-04-19', 'GP', 'D080', 'GPP025'), 
+(180, 'OT20', 'ORTHO', 2, '2016-03-17', '2016-03-19', 'GP', 'D080', 'GPP025'), 
 (181, 'CA01', 'ICU', 3, '2015-05-05', '2015-05-08', 'GP', 'D081', 'GPP025'), 
 (182, 'NE02', 'GEN', 7, '2015-07-25', '2015-08-01', 'EMERG', 'D050', 'GPP002'), 
 (183, 'OR03', 'ORTHO', 4, '2015-08-27', '2015-08-31', 'GP', 'D083', 'GPP025'), 
 (184, 'DE04', 'GEN', 2, '2015-09-15', '2015-09-17', 'NON-ELECT', 'D050', 'GPP004'), 
 (185, 'PS05', 'PSYCH', 10, '2015-10-30', '2015-11-09', 'GP', 'D085', 'GPP025'), 
 (186, 'ON06', 'GEN', 6, '2015-12-13', '2015-12-19', 'GP', 'D086', 'GPP025'), 
-(187, 'PE07', 'PEDS', 3, '2015-01-27', '2015-01-30', 'GP', 'D087', 'GPP025'), 
-(188, 'GE08', 'GEN', 7, '2015-02-22', '2015-03-01', 'EMERG', 'D050', 'GPP008'), 
+(187, 'PE07', 'PEDS', 3, '2015-04-27', '2015-04-30', 'GP', 'D087', 'GPP025'), 
+(188, 'GE08', 'GEN', 7, '2015-04-22', '2015-04-01', 'EMERG', 'D050', 'GPP008'), 
 (189, 'OB09', 'MATERNITY', 2, '2015-04-10', '2015-04-12', 'MAT', 'D089', 'GPP009'), 
 (190, 'EN10', 'GEN', 5, '2015-05-14', '2015-05-19', 'NON-ELECT', 'D050', 'GPP100'), 
 (191, 'GA11', 'GAS', 4, '2015-06-16', '2015-06-20', 'GP', 'D091', 'GPP025'), 
@@ -660,13 +660,13 @@ VALUES (101, 'CA01', 'ICU', 4, '2015-03-15', '2015-03-19', 'EMERG', 'D050', 'GPP
 (196, 'RH16', 'GEN', 7, '2016-01-28', '2016-02-04', 'NON-ELECT', 'D050', 'GPP016'), 
 (197, 'SU17', 'ORTHO', 5, '2016-02-28', '2016-03-04', 'EMERG', 'D050', 'GPP017'), 
 (198, 'UR18', 'GEN', 3, '2016-03-28', '2016-03-31', 'GP', 'D098', 'GPP025'), 
-(199, 'OP19', 'ORTHO', 6, '2016-04-28', '2016-05-04', 'NON-ELECT', 'D050', 'GPP019'), 
-(229, 'OT20', 'ORTHO', 4, '2016-05-28', '2016-06-01', 'GP', 'D050', 'GPP025'), 
+(199, 'OP19', 'ORTHO', 6, '2016-03-28', '2016-03-04', 'NON-ELECT', 'D050', 'GPP019'), 
+(229, 'OT20', 'ORTHO', 4, '2016-03-28', '2016-03-01', 'GP', 'D050', 'GPP025'), 
 (200, 'CA01', 'ICU', 2, '2015-07-02', '2015-07-04', 'GP', 'D001', 'GPP025'), 
 (201, 'NE02', 'GEN', 6, '2015-09-20', '2015-09-26', 'EMERG', 'D050', 'GPP002'), 
 (202, 'OR03', 'ORTHO', 7, '2015-11-05', '2015-11-12', 'GP', 'D003', 'GPP003'), 
 (203, 'DE04', 'GEN', 4, '2015-12-27', '2015-12-31', 'NON-ELECT', 'D050', 'GPP004'), 
-(204, 'PS05', 'PSYCH', 8, '2015-02-19', '2015-02-27', 'GP', 'D005', 'GPP025'), 
+(204, 'PS05', 'PSYCH', 8, '2015-04-19', '2015-04-27', 'GP', 'D005', 'GPP025'), 
 (205, 'ON06', 'GEN', 10, '2015-04-15', '2015-04-25', 'GP', 'D006', 'GPP025'), 
 (206, 'PE07', 'PEDS', 5, '2015-05-18', '2015-05-23', 'GP', 'D007', 'GPP025'), 
 (207, 'GE08', 'GEN', 9, '2015-07-02', '2015-07-11', 'EMERG', 'D050', 'GPP008'), 
@@ -676,16 +676,16 @@ VALUES (101, 'CA01', 'ICU', 4, '2015-03-15', '2015-03-19', 'EMERG', 'D050', 'GPP
 (211, 'HE12', 'GEN', 4, '2015-12-17', '2015-12-21', 'GP', 'D012', 'GPP025'), 
 (220, 'IN13', 'GEN', 8, '2016-02-01', '2016-02-09', 'GP', 'D013', 'GPP025'), 
 (221, 'NE14', 'NEURO', 12, '2016-03-19', '2016-03-31', 'EMERG', 'D050', 'GPP014'), 
-(222, 'PU15', 'RESP', 9, '2016-05-14', '2016-05-23', 'GP', 'D015', 'GPP025'), 
-(223, 'RH16', 'GEN', 9, '2016-06-18', '2016-06-27', 'NON-ELECT', 'D050', 'GPP016'), 
-(224, 'SU17', 'ORTHO', 7, '2016-07-28', '2016-08-04', 'EMERG', 'D050', 'GPP017'), 
-(225, 'UR18', 'GEN', 5, '2016-09-02', '2016-09-07', 'GP', 'D018', 'GPP025'), 
-(226, 'OP19', 'ORTHO', 8, '2016-10-08', '2016-10-16', 'NON-ELECT', 'D050', 'GPP019'),
-(227, 'OT20', 'ORTHO', 6, '2016-11-13', '2016-11-19', 'GP', 'D020', 'GPP025'), 
+(222, 'PU15', 'RESP', 9, '2016-03-14', '2016-03-23', 'GP', 'D015', 'GPP025'), 
+(223, 'RH16', 'GEN', 9, '2016-03-18', '2016-03-27', 'NON-ELECT', 'D050', 'GPP016'), 
+(224, 'SU17', 'ORTHO', 7, '2016-03-28', '2016-03-04', 'EMERG', 'D050', 'GPP017'), 
+(225, 'UR18', 'GEN', 5, '2016-03-02', '2016-03-07', 'GP', 'D018', 'GPP025'), 
+(226, 'OP19', 'ORTHO', 8, '2016-03-08', '2016-03-16', 'NON-ELECT', 'D050', 'GPP019'),
+(227, 'OT20', 'ORTHO', 6, '2016-03-13', '2016-03-19', 'GP', 'D020', 'GPP025'), 
 (141, 'CA01', 'ICU', 3, '2015-08-24', '2015-08-27', 'EMERG', 'D050', 'GPP021'),
-(142, 'NE02', 'GEN', 5, '2015-01-15', '2015-01-20', 'NON-ELECT', 'D050', 'GPP022'),
-(143, 'OR03', 'ORTHO', 6, '2015-02-10', '2015-02-16', 'NON-ELECT', 'D050', 'GPP023'),
-(144, 'DE04', 'GEN', 4, '2015-03-05', '2015-03-09', 'EMERG', 'D050', 'GPP024'),
+(142, 'NE02', 'GEN', 5, '2015-04-15', '2015-04-20', 'NON-ELECT', 'D050', 'GPP022'),
+(143, 'OR03', 'ORTHO', 6, '2015-04-10', '2015-04-16', 'NON-ELECT', 'D050', 'GPP023'),
+(144, 'DE04', 'GEN', 4, '2015-04-05', '2015-04-09', 'EMERG', 'D050', 'GPP024'),
 (145, 'PS05', 'PSYCH', 7, '2015-04-18', '2015-04-25', 'EMERG', 'D050', 'GPP025'),
 (146, 'ON06', 'GEN', 8, '2015-05-12', '2015-05-20', 'EMERG', 'D050', 'GPP021'),
 (147, 'PE07', 'PEDS', 5, '2015-06-22', '2015-06-27', 'NON-ELECT', 'D050', 'GPP021'),
@@ -695,9 +695,9 @@ VALUES (101, 'CA01', 'ICU', 4, '2015-03-15', '2015-03-19', 'EMERG', 'D050', 'GPP
 (151, 'GA11', 'GAS', 6, '2015-10-18', '2015-10-24', 'EMERG', 'D050', 'GPP001'),
 (152, 'HE12', 'GEN', 4, '2015-11-11', '2015-11-15', 'NON-ELECT', 'D050', 'GPP020'),
 (153, 'IN13', 'GEN', 8, '2015-12-05', '2015-12-13', 'EMERG', 'D050', 'GPP009'),
-(154, 'NE14', 'NEURO', 12, '2015-01-20', '2015-02-01', 'NON-ELECT', 'D050', 'GPP008'),
-(155, 'PU15', 'RESP', 9, '2015-02-15', '2015-02-24', 'EMERG', 'D050', 'GPP005'),
-(156, 'RH16', 'GEN', 9, '2015-03-10', '2015-03-19', 'EMERG', 'D050', 'GPP006'),
+(154, 'NE14', 'NEURO', 12, '2015-04-20', '2015-04-01', 'NON-ELECT', 'D050', 'GPP008'),
+(155, 'PU15', 'RESP', 9, '2015-04-15', '2015-04-24', 'EMERG', 'D050', 'GPP005'),
+(156, 'RH16', 'GEN', 9, '2015-04-10', '2015-04-19', 'EMERG', 'D050', 'GPP006'),
 (157, 'SU17', 'ORTHO', 7, '2015-04-05', '2015-04-12', 'NON-ELECT', 'D050', 'GPP007'),
 (158, 'UR18', 'GEN', 5, '2015-05-01', '2015-05-06', 'EMERG', 'D050', 'GPP008'),
 (159, 'OP19', 'ORTHO', 8, '2015-06-08', '2015-06-16', 'NON-ELECT', 'D050', 'GPP009'),
@@ -710,18 +710,18 @@ VALUES (101, 'CA01', 'ICU', 4, '2015-03-15', '2015-03-19', 'EMERG', 'D050', 'GPP
 (166, 'ON06', 'GEN', 8, '2016-01-10', '2016-01-18', 'EMERG', 'D050', 'GPP016'),
 (167, 'PE07', 'PEDS', 5, '2016-02-05', '2016-02-10', 'NON-ELECT', 'D050', 'GPP017'),
 (168, 'GE08', 'GEN', 9, '2016-03-01', '2016-03-10', 'NON-ELECT', 'D050', 'GPP018'),
-(169, 'OB09', 'MATERNITY', 4, '2016-04-15', '2016-04-19', 'MAT', 'D050', 'GPP019'),
-(170, 'EN10', 'GEN', 7, '2016-05-10', '2016-05-17', 'EMERG', 'D050', 'GPP020'),
-(171, 'GA11', 'GAS', 6, '2016-06-05', '2016-06-11', 'EMERG', 'D050', 'GPP021'),
-(172, 'HE12', 'GEN', 4, '2016-07-01', '2016-07-05', 'NON-ELECT', 'D050', 'GPP022'),
-(173, 'IN13', 'GEN', 8, '2016-08-10', '2016-08-18', 'EMERG', 'D050', 'GPP023'),
-(174, 'NE14', 'NEURO', 12, '2016-09-15', '2016-09-27', 'NON-ELECT', 'D050', 'GPP024'),
-(175, 'PU15', 'RESP', 9, '2016-10-10', '2016-10-19', 'EMERG', 'D050', 'GPP025'),
-(176, 'RH16', 'GEN', 9, '2016-11-05', '2016-11-14', 'EMERG', 'D050', 'GPP016'),
-(177, 'SU17', 'ORTHO', 7, '2016-12-01', '2016-12-08', 'NON-ELECT', 'D050', 'GPP017'),
-(178, 'UR18', 'GEN', 5, '2015-01-10', '2015-01-15', 'EMERG', 'D050', 'GPP018'),
-(179, 'OP19', 'ORTHO', 8, '2015-02-05', '2015-02-13', 'NON-ELECT', 'D050', 'GPP019'),
-(180, 'OT20', 'ORTHO', 6, '2015-03-01', '2015-03-07', 'EMERG', 'D050', 'GPP020'), 
+(169, 'OB09', 'MATERNITY', 4, '2016-03-15', '2016-03-19', 'MAT', 'D050', 'GPP019'),
+(170, 'EN10', 'GEN', 7, '2016-03-10', '2016-03-17', 'EMERG', 'D050', 'GPP020'),
+(171, 'GA11', 'GAS', 6, '2016-03-05', '2016-03-11', 'EMERG', 'D050', 'GPP021'),
+(172, 'HE12', 'GEN', 4, '2016-03-01', '2016-03-05', 'NON-ELECT', 'D050', 'GPP022'),
+(173, 'IN13', 'GEN', 8, '2016-03-10', '2016-03-18', 'EMERG', 'D050', 'GPP023'),
+(174, 'NE14', 'NEURO', 12, '2016-03-15', '2016-03-27', 'NON-ELECT', 'D050', 'GPP024'),
+(175, 'PU15', 'RESP', 9, '2016-03-10', '2016-03-19', 'EMERG', 'D050', 'GPP025'),
+(176, 'RH16', 'GEN', 9, '2016-03-05', '2016-03-14', 'EMERG', 'D050', 'GPP016'),
+(177, 'SU17', 'ORTHO', 7, '2016-01-01', '2016-01-08', 'NON-ELECT', 'D050', 'GPP017'),
+(178, 'UR18', 'GEN', 5, '2015-04-10', '2015-04-15', 'EMERG', 'D050', 'GPP018'),
+(179, 'OP19', 'ORTHO', 8, '2015-04-05', '2015-04-13', 'NON-ELECT', 'D050', 'GPP019'),
+(180, 'OT20', 'ORTHO', 6, '2015-04-01', '2015-04-07', 'EMERG', 'D050', 'GPP020'), 
 (181, 'CA01', 'ICU', 3, '2015-04-01', '2015-04-04', 'EMERG', 'D050', 'GPP021'),
 (182, 'NE02', 'GEN', 5, '2015-05-10', '2015-05-15', 'NON-ELECT', 'D050', 'GPP012'),
 (183, 'OR03', 'ORTHO', 6, '2015-06-05', '2015-06-11', 'NON-ELECT', 'D050', 'GPP023'),
@@ -731,9 +731,9 @@ VALUES (101, 'CA01', 'ICU', 4, '2015-03-15', '2015-03-19', 'EMERG', 'D050', 'GPP
 (187, 'PE07', 'PEDS', 5, '2015-10-05', '2015-10-10', 'NON-ELECT', 'D050', 'GPP017'),
 (188, 'GE08', 'GEN', 9, '2015-11-01', '2015-11-10', 'NON-ELECT', 'D050', 'GPP018'),
 (189, 'OB09', 'MATERNITY', 4, '2015-12-15', '2015-12-19', 'MAT', 'D050', 'GPP019'),
-(190, 'EN10', 'GEN', 7, '2015-01-10', '2015-01-17', 'EMERG', 'D050', 'GPP100'),
-(191, 'GA11', 'GAS', 6, '2015-02-05', '2015-02-11', 'EMERG', 'D050', 'GPP011'),
-(192, 'HE12', 'GEN', 4, '2015-03-01', '2015-03-05', 'NON-ELECT', 'D050', 'GPP012'),
+(190, 'EN10', 'GEN', 7, '2015-04-10', '2015-04-17', 'EMERG', 'D050', 'GPP100'),
+(191, 'GA11', 'GAS', 6, '2015-04-05', '2015-04-11', 'EMERG', 'D050', 'GPP011'),
+(192, 'HE12', 'GEN', 4, '2015-04-01', '2015-04-05', 'NON-ELECT', 'D050', 'GPP012'),
 (193, 'IN13', 'GEN', 8, '2015-04-10', '2015-04-18', 'EMERG', 'D050', 'GPP003'),
 (194, 'NE14', 'NEURO', 12, '2015-05-15', '2015-05-27', 'NON-ELECT', 'D050', 'GPP004'),
 (195, 'PU15', 'RESP', 9, '2015-06-10', '2015-06-19', 'EMERG', 'D050', 'GPP005'),
@@ -749,8 +749,6 @@ FROM Admission;
 ### Queries and Analysis
 1. Patients' details
 ```sql
--- Patient and Admission Details:
--- 1. List all patients with their details (ID, Name, Gender, Date of Birth, Postcode).
 
 SELECT PatientID, 
 	CONCAT(Forename,' ', Surname) AS Name,
@@ -761,12 +759,11 @@ FROM Patient;
 ```
 ![image](https://github.com/user-attachments/assets/9cc8c6ef-ecc1-488b-b443-c4d89213649c)
 
-This SQL query retrieves the patient IDs, names, gender, date of birth and postcode of all patients. The result includes patient IDs ranging from 101 to 130 and their corresponding names.
+This SQL query retrieves the patient IDs, names, gender, date of birth and postcode of all patients. The result includes patient IDs ranging from 101 to 130 and their corresponding details.
 
 
 2. Patients' total number of admissions
 ```sql
--- 2. Retrieve the total number of admissions per patient.
 
 SELECT P.PatientID, COUNT(A.AdmissionID) AS TotalNumberOfAdmissions
 FROM Patient P
@@ -781,10 +778,7 @@ This SQL query retrieves all patient IDs and their total number of admissions, e
 
 3. Admission analysis
 ```sql
--- Admission Analysis:
--- 3. For hospital admissions with a discharge date in the financial year 2014/15 (01/04/2014 to 31/03/2015), 
--- find the maximum length of stay where the admission ward was the Endoscopy Suite,
--- and the method of admission type was Elective.
+
 SELECT A.DischargeDate, 
        W.WardName, 
        M.MethodOfAdmissionType, 
@@ -803,7 +797,6 @@ This SQL query result shows the maximum length of stay to be 5 days.
 
 4. Total number of admissions for each ward in the financial year 2015/16
 ```sql
--- 4. Retrieve the total number of admissions for each ward in the financial year 2015/16.
 
 SELECT W.WardCode,
 		W.WardName, 
@@ -815,20 +808,16 @@ WHERE AdmissionDate BETWEEN '2015-04-01' AND '2016-03-31'
 GROUP BY W.WardCode, W.WardName, W.WardType
 ORDER BY TotalNumberOfAdmissions DESC;
 ```
-![image](https://github.com/user-attachments/assets/e5b81c79-9cbb-46d4-9f1a-c5d0e62c8528)
+![image](https://github.com/user-attachments/assets/ba3ff41d-c1dc-48e8-9fc6-658d08897800)
 
-This SQL query retrieves all the wards that had admissions in the year 2015/16 and their respective number of admissions.
+This SQL query retrieves all the wards that had admissions in the financial year 2015/16 and their respective number of admissions.
 
-5. Most common diagnosis
+5. Most common diagnosis in the year 2015/16
 ```sql
--- Diagnosis and Treatment:
---5. What was the most common primary diagnosis (include the code and description)for hospital 
---admission episodes where the discharge date was in the financial year 2015/16 (01/04/2015 to 31/03/2016),
---the method of admission type was Emergency, and the patient lived in the SK2 postcode area?
 
 SELECT TOP 1 D.DiagnosisCode, 
 		D.DiagnosisDescription,
-		COUNT(D.DiagnosisCode) AS Occurence
+		COUNT(D.DiagnosisCode) AS AdmissionEpisodes
 FROM Admission A
 JOIN Diagnosis D ON A.DiagnosisCode = D.DiagnosisCode
 JOIN MethodOfAdmission M ON A.MethodOfAdmissionCode = M.MethodOfAdmissionCode
@@ -837,10 +826,31 @@ WHERE A.DischargeDate BETWEEN '2015-04-01' AND '2016-03-31'
 		AND M.MethodOfAdmissionType ='Emergency'
 		AND P.Postcode = 'SK2'
 GROUP BY D.DiagnosisCode, D.DiagnosisDescription
-ORDER BY Occurence DESC;
+ORDER BY AdmissionEpisodes DESC;
 ```
-![image](https://github.com/user-attachments/assets/c35351c8-dee2-48bf-a454-e63535b3c5fd)
+![image](https://github.com/user-attachments/assets/140c510c-9d7b-4835-9d89-f5b98f0d193f)
 
-This SQL query result shows that Cholera with the Diagnosis code 'D050', is the most common diagnosis.
+This SQL query result shows that Cholera with the Diagnosis code 'D050', is the most common diagnosis, based on the filters applied
 
-6. 
+6. Primary diagnosis with at least 100 admission episodes
+```sql
+
+SELECT TOP 1 
+    D.DiagnosisCode,
+    D.DiagnosisDescription,
+    AVG(A.LengthOfStay) AS AvgLengthofStay,
+    COUNT(D.DiagnosisCode) AS AdmissionEpisodes
+FROM Admission A
+JOIN Diagnosis D ON A.DiagnosisCode = D.DiagnosisCode
+JOIN MethodOfAdmission M ON A.MethodOfAdmissionCode = M.MethodOfAdmissionCode
+WHERE A.DischargeDate BETWEEN '2015-04-01' AND '2016-03-31'
+    AND (M.MethodOfAdmissionType = 'Emergency' 
+         OR M.MethodOfAdmissionType = 'Non-Elective')
+GROUP BY D.DiagnosisCode, D.DiagnosisDescription
+HAVING COUNT(D.DiagnosisCode) > 100
+ORDER BY AvgLengthofStay DESC;
+```
+![image](https://github.com/user-attachments/assets/f0e4dfe7-10ea-4ab0-ab17-0992c640d2b2)
+
+This SQL query retrieves the primary diagnosis
+7.
