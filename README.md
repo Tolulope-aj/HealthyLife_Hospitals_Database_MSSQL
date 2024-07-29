@@ -812,6 +812,7 @@ ORDER BY TotalNumberOfAdmissions DESC;
 
 This SQL query retrieves all the wards that had admissions in the financial year 2015/16 and their respective number of admissions.
 
+
 5. Most common diagnosis in the year 2015/16
 ```sql
 
@@ -831,6 +832,7 @@ ORDER BY AdmissionEpisodes DESC;
 ![image](https://github.com/user-attachments/assets/140c510c-9d7b-4835-9d89-f5b98f0d193f)
 
 This SQL query result shows that Cholera with the Diagnosis code 'D050', is the most common diagnosis, based on the filters applied
+
 
 6. Primary diagnosis with at least 100 admission episodes
 ```sql
@@ -1015,8 +1017,38 @@ ORDER BY NumberOfAdmissions DESC;
 ```
 ![image](https://github.com/user-attachments/assets/818389e4-8a23-4eab-8911-837b70db15a1)
 
-This SQL query shows that the top 5 Specialties with the highest number of admissions are Endocrinology, Gastroenterology, Hematology, Infectious diseases and Ophthalmology with a total of 9 admissions each.
+This SQL query result shows that the top 5 Specialties with the highest number of admissions are Endocrinology, Gastroenterology, Hematology, Infectious diseases and Ophthalmology with a total of 9 admissions each.
+
 
 12. The GP with the most patients admitted to the hospital in the financial year 2015/16.
 ```sql
+SELECT TOP 1 G.GPCode, 
+	G.GPName,
+	COUNT(A.PatientID) AS NumberOfPatients
+FROM Admission A
+JOIN GP G ON A.GPPracticeCode = G.GPPracticeCode
+WHERE AdmissionDate BETWEEN '2015-04-01' AND '2016-03-31'
+GROUP BY G.GPCode, G.GPName
+ORDER BY NumberOfPatients DESC;
+```
+![image](https://github.com/user-attachments/assets/420668c8-69fb-4e23-9909-b9c200da704d)
+
+This SQL query result shows that General Practitioner 'Dr. Paul Nelson' has the most patients in the year 2015/16, with a total of 63 patients.
+
+
+13. List of all patients who were admitted to the ICU ward and their corresponding diagnoses.
+```sql
+SELECT P.PatientID,
+		W.WardCode,
+		D.DiagnosisDescription
+FROM Patient P
+JOIN Admission A ON P.PatientID = A.PatientID
+JOIN Diagnosis D ON D.DiagnosisCode = A.DiagnosisCode
+JOIN Ward W ON W.WardCode = A.WardCode
+WHERE W.WardCode = 'ICU'
+GROUP BY P.PatientID, W.WardCode, D.DiagnosisDescription;
+```
+![image](https://github.com/user-attachments/assets/68389f52-67a4-4117-8492-87505b93279b)
+
+This sql query results shows that 5 patients were admitted in the ICU ward, which includes patientIDs 161 and 181 having 2 admission episodes each with different diagnoses; and the primary diagnosis being Cholera.
 
