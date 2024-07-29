@@ -973,3 +973,50 @@ This SQL query retrieves all the records that meets the specified criteria above
 
 9. list of all patients who had more than one admission in the financial year 2015/16
 ```sql
+SELECT P.PatientID,
+	COUNT(A.AdmissionID) AS AdmissionEpisodes
+FROM Admission A
+JOIN Patient P ON A.PatientID = P.PatientID
+WHERE AdmissionDate BETWEEN '2015-04-01' AND '2016-03-31'
+GROUP BY P.PatientID
+HAVING COUNT(A.AdmissionID) > 1;
+```
+![image](https://github.com/user-attachments/assets/b6e36fa6-c967-463a-8d76-146db1ba0620)
+
+This SQL query retrieves all patients with more than one admission episode in the year 2015/16. The result shows 61 patient records, which includes IDs 106,141,142,143 with 2 admission episodes each.
+
+
+10. The average length of stay for all admissions in each ward for the financial year 2015/16
+```sql
+SELECT W.WardCode, 
+		W.WardName, 
+		W.WardType, 
+		AVG(A.LengthOfStay) AS AverageLengthOfStay
+FROM Admission A
+JOIN Ward W ON A.WardCode = W.WardCode
+WHERE AdmissionDate BETWEEN '2015-04-01' AND '2016-03-31'
+GROUP BY W.WardCode, W.WardName, W.WardType;
+```
+![image](https://github.com/user-attachments/assets/b21e1163-670e-411b-9f86-c49a0c4d8704)
+
+This SQL query retrieves the average length of stay for all admissions in each ward in the year 2015/16. The result includes Maternity ward and Respiratory ward having the highest average length of stay of 10 days.
+
+
+11. Top 5 specialties with the highest number of admissions in the financial year 2015/16
+```sql
+SELECT TOP 5 S.SpecialtyCode,	
+			S.SpecialtyName,
+			COUNT(A.AdmissionID) AS NumberOfAdmissions
+FROM Admission A
+JOIN Specialty S ON A.SpecialtyCode = S.SpecialtyCode
+WHERE AdmissionDate BETWEEN '2015-04-01' AND '2016-03-31'
+GROUP BY S.SpecialtyCode, S.SpecialtyName
+ORDER BY NumberOfAdmissions DESC;
+```
+![image](https://github.com/user-attachments/assets/818389e4-8a23-4eab-8911-837b70db15a1)
+
+This SQL query shows that the top 5 Specialties with the highest number of admissions are Endocrinology, Gastroenterology, Hematology, Infectious diseases and Ophthalmology with a total of 9 admissions each.
+
+12. The GP with the most patients admitted to the hospital in the financial year 2015/16.
+```sql
+
